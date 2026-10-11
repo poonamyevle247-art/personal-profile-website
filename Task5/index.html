@@ -1,0 +1,1836 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InAmigos Foundation — Small Acts. Big Change. A Better Tomorrow.</title>
+  <meta name="description" content="InAmigos Foundation is dedicated to community development, education for every child, and environmental care. Join us in making a difference.">
+  
+  <!-- Google Fonts: DM Sans (Headings) & Manrope (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="theme-default">
+
+  <!-- ========================================================
+       TOP TOOLBAR / PROTOTYPE CONTROLS (Deliverables & Review Tools)
+       Allows stakeholders to inspect Desktop 1440px, Mobile 390px, and UI Kit
+       ======================================================== -->
+  <aside class="prototype-bar" aria-label="Prototype View Switcher">
+    <div class="prototype-bar-inner">
+      <div class="prototype-badge">
+        <span class="live-dot" aria-hidden="true"></span>
+        <span class="proto-tag">PROTOTYPE MODE</span>
+        <span class="proto-divider">|</span>
+        <span class="proto-sub">InAmigos Foundation NGO Design System</span>
+      </div>
+      
+      <div class="prototype-controls" role="group" aria-label="Viewport Switcher">
+        <button type="button" class="view-btn active" data-view="full" title="Standard Responsive View">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
+          <span>Responsive</span>
+        </button>
+        <button type="button" class="view-btn" data-view="desktop" title="Preview Desktop 1440px canvas">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="M6 8h.01M10 8h.01M14 8h.01"/></svg>
+          <span>Desktop 1440px</span>
+        </button>
+        <button type="button" class="view-btn" data-view="mobile" title="Preview Mobile 390px viewport frame">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="20" x="5" y="2" rx="2"/><line x1="12" x2="12.01" y1="18" y2="18"/></svg>
+          <span>Mobile 390px</span>
+        </button>
+        <button type="button" class="view-btn ui-kit-btn" id="openUiKitBtn" title="Inspect Design Tokens and Components">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+          <span>Design System</span>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Prototype Device Frame Container (Active during desktop or mobile emulation) -->
+  <div id="viewportContainer" class="viewport-canvas">
+    <div id="deviceFrame" class="device-frame">
+      <div id="deviceScreen" class="device-screen">
+
+        <!-- ========================================================
+             1. ANNOUNCEMENT & UTILITY BAR
+             ======================================================== -->
+        <div class="top-announcement" role="region" aria-label="Announcement">
+          <div class="container announcement-content">
+            <div class="announcement-text">
+              <span class="announcement-pill">Impact Alert</span>
+              <span>Together we have touched 5,000+ lives across 15+ communities. Thank you for your continued trust!</span>
+            </div>
+            <div class="announcement-links">
+              <a href="#events" class="announcement-link">Upcoming Events &rarr;</a>
+              <span class="sep" aria-hidden="true">&bull;</span>
+              <a href="#volunteer" class="announcement-link">Volunteer Opportunities</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ========================================================
+             2. NAVIGATION BAR
+             ======================================================== -->
+        <header class="site-header" id="mainHeader">
+          <div class="container nav-container">
+            <!-- Brand Logo -->
+            <a href="#hero" class="brand-logo" aria-label="InAmigos Foundation Home">
+              <div class="logo-mark" aria-hidden="true">
+                <!-- Custom SVG Heart & Community symbol -->
+                <svg width="34" height="34" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="18" cy="18" r="18" fill="#174C3C" />
+                  <!-- Interlocking heart & supportive hands -->
+                  <path d="M18 26.5C18 26.5 10 20.8 10 15.2C10 12.3 12.2 10 15 10C16.8 10 18 11.2 18 11.2C18 11.2 19.2 10 21 10C23.8 10 26 12.3 26 15.2C26 20.8 18 26.5 18 26.5Z" fill="#F28B62" />
+                  <circle cx="18" cy="13" r="2.2" fill="#F7F4EC" />
+                  <path d="M12.5 18.5C13.5 20.5 15.5 22 18 22.5C20.5 22 22.5 20.5 23.5 18.5" stroke="#F7F4EC" stroke-width="1.6" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="brand-text">
+                <span class="brand-name">InAmigos</span>
+                <span class="brand-sub">Foundation</span>
+              </div>
+            </a>
+
+            <!-- Desktop Navigation Links -->
+            <nav class="nav-menu" id="navMenu" aria-label="Primary Navigation">
+              <ul class="nav-list">
+                <li><a href="#hero" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About Us</a></li>
+                <li><a href="#impact" class="nav-link">Our Impact</a></li>
+                <li><a href="#campaigns" class="nav-link">Campaigns</a></li>
+                <li><a href="#volunteer" class="nav-link">Volunteer</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+              </ul>
+            </nav>
+
+            <!-- Navigation Actions -->
+            <div class="nav-actions">
+              <a href="#donation" class="btn btn-coral nav-donate-btn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                <span>Donate Now</span>
+              </a>
+              
+              <!-- Mobile Hamburger Toggle -->
+              <button type="button" class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileDrawer">
+                <span class="hamburger-line line-1" aria-hidden="true"></span>
+                <span class="hamburger-line line-2" aria-hidden="true"></span>
+                <span class="hamburger-line line-3" aria-hidden="true"></span>
+              </button>
+            </div>
+          </div>
+        </header>
+
+        <!-- Mobile Drawer Overlay -->
+        <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+          <div class="drawer-backdrop" id="drawerBackdrop"></div>
+          <div class="drawer-content">
+            <div class="drawer-header">
+              <div class="brand-logo">
+                <div class="logo-mark">
+                  <svg width="30" height="30" viewBox="0 0 36 36" fill="none">
+                    <circle cx="18" cy="18" r="18" fill="#174C3C" />
+                    <path d="M18 26.5C18 26.5 10 20.8 10 15.2C10 12.3 12.2 10 15 10C16.8 10 18 11.2 18 11.2C18 11.2 19.2 10 21 10C23.8 10 26 12.3 26 15.2C26 20.8 18 26.5 18 26.5Z" fill="#F28B62" />
+                  </svg>
+                </div>
+                <span class="brand-name">InAmigos Foundation</span>
+              </div>
+              <button type="button" class="drawer-close-btn" id="drawerCloseBtn" aria-label="Close menu">&times;</button>
+            </div>
+            
+            <nav class="drawer-nav">
+              <ul>
+                <li><a href="#hero" class="drawer-link">Home</a></li>
+                <li><a href="#about" class="drawer-link">About Us</a></li>
+                <li><a href="#impact" class="drawer-link">Our Impact</a></li>
+                <li><a href="#campaigns" class="drawer-link">Campaigns</a></li>
+                <li><a href="#volunteer" class="drawer-link">Volunteer</a></li>
+                <li><a href="#contact" class="drawer-link">Contact</a></li>
+              </ul>
+            </nav>
+
+            <div class="drawer-footer">
+              <a href="#donation" class="btn btn-coral btn-block drawer-donate-btn">
+                <span>Donate Now</span>
+              </a>
+              <p class="drawer-note">"Every action counts. Every person matters."</p>
+            </div>
+          </div>
+        </div>
+
+        <main id="mainContent">
+
+          <!-- ========================================================
+               3. HERO SECTION
+               ======================================================== -->
+          <section class="hero-section" id="hero">
+            <div class="hero-shape-bg" aria-hidden="true"></div>
+            <div class="container hero-container">
+              
+              <!-- Left Column: Emotional Storytelling & Clear CTAs -->
+              <div class="hero-content">
+                <div class="eyebrow-tag">
+                  <span class="eyebrow-icon" aria-hidden="true">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                  </span>
+                  <span>TOGETHER, WE CAN MAKE A DIFFERENCE</span>
+                </div>
+
+                <h1 class="hero-title">
+                  Small Acts. Big Change. A Better Tomorrow.
+                </h1>
+
+                <p class="hero-description">
+                  Every helping hand creates a new possibility. Join us in building stronger communities and creating meaningful change, one life at a time.
+                </p>
+
+                <div class="hero-cta-group">
+                  <a href="#donation" class="btn btn-coral btn-lg">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                    <span>Donate Now</span>
+                  </a>
+                  <a href="#volunteer" class="btn btn-outline-forest btn-lg">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    <span>Become a Volunteer</span>
+                  </a>
+                </div>
+
+                <!-- Trust Message -->
+                <div class="hero-trust-message">
+                  <div class="trust-icon-wrap" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                  </div>
+                  <div class="trust-text">
+                    <p class="trust-quote">"Every action counts. Every person matters."</p>
+                    <span class="trust-sub">Trusted by communities, driven by compassionate volunteers.</span>
+                  </div>
+                </div>
+
+                <!-- Quick Highlights -->
+                <div class="hero-badges-row">
+                  <div class="micro-badge">
+                    <span class="check-icon" aria-hidden="true">&#10003;</span>
+                    <span>100% Volunteer Driven</span>
+                  </div>
+                  <div class="micro-badge">
+                    <span class="check-icon" aria-hidden="true">&#10003;</span>
+                    <span>Direct Grassroots Action</span>
+                  </div>
+                  <div class="micro-badge">
+                    <span class="check-icon" aria-hidden="true">&#10003;</span>
+                    <span>Transparent Stewardship</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right Column: Authentic Photography & Floating Badge -->
+              <div class="hero-visual">
+                <div class="hero-image-wrapper">
+                  <img 
+                    src="https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=1000&q=80" 
+                    alt="Volunteers working joyfully with children and community members" 
+                    class="hero-img"
+                    loading="eager"
+                  />
+                  
+                  <!-- Floating Card 1: Change starts with us -->
+                  <div class="floating-card floating-bottom-card" role="note" aria-label="Community impact note">
+                    <div class="floating-heart-icon" aria-hidden="true">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="#F28B62"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                    </div>
+                    <div class="floating-text-group">
+                      <p class="floating-title">Change starts with us.</p>
+                      <p class="floating-subtitle">200+ active volunteers on the ground</p>
+                    </div>
+                  </div>
+
+                  <!-- Floating Card 2: Community Impact Pill -->
+                  <div class="floating-card floating-top-card" aria-hidden="true">
+                    <span class="floating-pulse"></span>
+                    <span class="floating-pill-text">15+ Communities Empowered</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+          <!-- ========================================================
+               ABOUT US / PILLARS BRIDGE SECTION
+               ======================================================== -->
+          <section class="section about-section" id="about">
+            <div class="container">
+              <div class="section-header text-center">
+                <span class="section-tag">WHO WE ARE</span>
+                <h2 class="section-title">Rooted in Compassion, Driven by Community</h2>
+                <p class="section-subtitle">
+                  InAmigos Foundation is dedicated to bringing people together. We believe true transformation occurs when everyday citizens take small, purposeful steps to uplift their neighbors.
+                </p>
+              </div>
+
+              <div class="pillars-grid">
+                <div class="pillar-card">
+                  <div class="pillar-icon bg-sage-light" aria-hidden="true">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#174C3C" stroke-width="2" stroke-linecap="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10M6 10h10"/></svg>
+                  </div>
+                  <h3 class="pillar-title">Education for All</h3>
+                  <p class="pillar-desc">
+                    Unlocking potential through learning supplies, after-school mentorship, and digital foundational literacy for children.
+                  </p>
+                </div>
+
+                <div class="pillar-card">
+                  <div class="pillar-icon bg-coral-light" aria-hidden="true">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#F28B62" stroke-width="2" stroke-linecap="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                  </div>
+                  <h3 class="pillar-title">Community Wellbeing</h3>
+                  <p class="pillar-desc">
+                    Providing nutritional support, emergency community aid, and warm fellowship for families during times of need.
+                  </p>
+                </div>
+
+                <div class="pillar-card">
+                  <div class="pillar-icon bg-sage-light" aria-hidden="true">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#174C3C" stroke-width="2" stroke-linecap="round"><path d="M12 10a6 6 0 0 0-6-6c0 7 6 14 6 14s6-7 6-14a6 6 0 0 0-6 6Z"/><path d="M12 2v2M12 22v-2"/></svg>
+                  </div>
+                  <h3 class="pillar-title">Green Living</h3>
+                  <p class="pillar-desc">
+                    Fostering environmental awareness, sapling plantations, and sustainable neighborhood clean-up campaigns.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- ========================================================
+               4. IMPACT SHOWCASE
+               ======================================================== -->
+          <section class="section impact-section" id="impact">
+            <div class="container">
+              
+              <div class="section-header text-center">
+                <span class="section-tag">MEASURABLE CHANGE</span>
+                <h2 class="section-title">Together, We're Making a Difference</h2>
+                <p class="section-subtitle">
+                  Every contribution helps create opportunities, strengthen communities, and inspire hope.
+                </p>
+                <div class="prototype-data-notice" role="note">
+                  <span class="info-dot" aria-hidden="true">&#9432;</span>
+                  <span>Illustrative sample figures for design prototype review. Verified audit metrics will update upon official confirmation.</span>
+                </div>
+              </div>
+
+              <!-- 4 Stat Cards Grid -->
+              <div class="impact-grid">
+                
+                <!-- Stat Card 1 -->
+                <div class="stat-card" data-counter="5000">
+                  <div class="stat-icon-wrapper" aria-hidden="true">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                  </div>
+                  <div class="stat-number-wrap">
+                    <span class="stat-number counter-value">5,000</span><span class="stat-plus">+</span>
+                  </div>
+                  <h3 class="stat-label">People Reached</h3>
+                  <p class="stat-description">
+                    Direct beneficiaries receiving education kits, nutritious food packages, and emergency relief support.
+                  </p>
+                  <div class="stat-footer-badge">
+                    <span>Across 3 Regions</span>
+                  </div>
+                </div>
+
+                <!-- Stat Card 2 -->
+                <div class="stat-card" data-counter="25">
+                  <div class="stat-icon-wrapper" aria-hidden="true">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z"/></svg>
+                  </div>
+                  <div class="stat-number-wrap">
+                    <span class="stat-number counter-value">25</span><span class="stat-plus">+</span>
+                  </div>
+                  <h3 class="stat-label">Community Projects</h3>
+                  <p class="stat-description">
+                    Grassroots learning drives, park restoration projects, and local health awareness workshops completed.
+                  </p>
+                  <div class="stat-footer-badge">
+                    <span>Active & Completed</span>
+                  </div>
+                </div>
+
+                <!-- Stat Card 3 -->
+                <div class="stat-card" data-counter="200">
+                  <div class="stat-icon-wrapper" aria-hidden="true">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                  </div>
+                  <div class="stat-number-wrap">
+                    <span class="stat-number counter-value">200</span><span class="stat-plus">+</span>
+                  </div>
+                  <h3 class="stat-label">Active Volunteers</h3>
+                  <p class="stat-description">
+                    Passionate students, working professionals, and retirees dedicating their weekends to community service.
+                  </p>
+                  <div class="stat-footer-badge">
+                    <span>Growing Community</span>
+                  </div>
+                </div>
+
+                <!-- Stat Card 4 -->
+                <div class="stat-card" data-counter="15">
+                  <div class="stat-icon-wrapper" aria-hidden="true">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                  </div>
+                  <div class="stat-number-wrap">
+                    <span class="stat-number counter-value">15</span><span class="stat-plus">+</span>
+                  </div>
+                  <h3 class="stat-label">Communities Supported</h3>
+                  <p class="stat-description">
+                    Suburban neighborhoods, rural centers, and community schools with sustainable ongoing partnerships.
+                  </p>
+                  <div class="stat-footer-badge">
+                    <span>Local Partnerships</span>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Impact Transparency Callout Banner -->
+              <div class="impact-quote-banner">
+                <div class="quote-symbol" aria-hidden="true">“</div>
+                <div class="quote-body">
+                  <p class="quote-text">
+                    "When we measure impact, we don't just count numbers—we celebrate renewed confidence in a child's eyes, cleaner parks in our neighborhoods, and neighbors looking out for one another."
+                  </p>
+                  <span class="quote-author">— InAmigos Community Working Group</span>
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+          <!-- ========================================================
+               5. DONATION SECTION
+               ======================================================== -->
+          <section class="section donation-section" id="donation">
+            <div class="container">
+              
+              <div class="section-header text-center">
+                <span class="section-tag section-tag-coral">DIRECT SUPPORT</span>
+                <h2 class="section-title">Be the Reason Someone Smiles Today</h2>
+                <p class="section-subtitle">
+                  Your generosity can help turn hope into opportunity. Choose an amount and support meaningful community initiatives.
+                </p>
+              </div>
+
+              <div class="donation-layout">
+                
+                <!-- Left: Impact Story & Value Guide -->
+                <div class="donation-context">
+                  <div class="donation-highlight-card">
+                    <h3 class="highlight-title">Where Your Support Goes</h3>
+                    <p class="highlight-desc">
+                      Transparent allocation ensures every rupee directly reaches the grassroots programs that matter most to our community.
+                    </p>
+
+                    <div class="impact-tier-list">
+                      <div class="tier-item" data-tier="500">
+                        <div class="tier-amount">₹500</div>
+                        <div class="tier-content">
+                          <strong>Childhood Learning Kit:</strong>
+                          <span>Provides textbooks, stationery, and creative learning materials for 2 children for a whole term.</span>
+                        </div>
+                      </div>
+
+                      <div class="tier-item" data-tier="1000">
+                        <div class="tier-amount">₹1,000</div>
+                        <div class="tier-content">
+                          <strong>Community Nutrition Support:</strong>
+                          <span>Supplies a family with two weeks of nutritious grains, lentils, and fresh essentials.</span>
+                        </div>
+                      </div>
+
+                      <div class="tier-item" data-tier="2500">
+                        <div class="tier-amount">₹2,500</div>
+                        <div class="tier-content">
+                          <strong>Youth Mentorship & Workshop:</strong>
+                          <span>Funds a weekend digital literacy and career guidance workshop for 15 adolescents.</span>
+                        </div>
+                      </div>
+
+                      <div class="tier-item" data-tier="5000">
+                        <div class="tier-amount">₹5,000</div>
+                        <div class="tier-content">
+                          <strong>Neighborhood Green Canopy:</strong>
+                          <span>Plants and cares for 25 native shade-giving trees with community watering monitors.</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="reassurance-box">
+                      <div class="reassurance-icon" aria-hidden="true">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#174C3C" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                      </div>
+                      <p class="reassurance-text">
+                        <strong>"Your support matters. Your generosity creates possibilities."</strong>
+                        <span>We respect every donor's trust. Regular progress updates and impact summaries are shared openly with our supporters.</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Right: Interactive Donation Panel -->
+                <div class="donation-panel-card">
+                  <form id="donationForm" class="donation-form" novalidate>
+                    
+                    <!-- Frequency Toggle -->
+                    <div class="frequency-toggle-wrapper">
+                      <div class="frequency-toggle" role="radiogroup" aria-label="Donation Frequency">
+                        <button type="button" class="freq-btn active" data-freq="one-time" role="radio" aria-checked="true">
+                          One-Time Donation
+                        </button>
+                        <button type="button" class="freq-btn" data-freq="monthly" role="radio" aria-checked="false">
+                          <span class="heart-dot" aria-hidden="true">&#9829;</span>
+                          Monthly Giving
+                        </button>
+                      </div>
+                      <p class="freq-hint" id="freqHintText">
+                        Make an immediate difference with a single compassionate contribution.
+                      </p>
+                    </div>
+
+                    <!-- Preset Amount Selector -->
+                    <div class="amount-selector-block">
+                      <label class="form-label">Select Donation Amount (INR):</label>
+                      <div class="preset-grid" role="radiogroup" aria-label="Preset Amounts">
+                        <button type="button" class="preset-btn" data-amount="500" role="radio" aria-checked="false">
+                          <span class="currency">₹</span>500
+                        </button>
+                        <button type="button" class="preset-btn active" data-amount="1000" role="radio" aria-checked="true">
+                          <span class="currency">₹</span>1,000
+                          <span class="popular-tag">Popular</span>
+                        </button>
+                        <button type="button" class="preset-btn" data-amount="2500" role="radio" aria-checked="false">
+                          <span class="currency">₹</span>2,500
+                        </button>
+                        <button type="button" class="preset-btn" data-amount="500" data-amount="5000" role="radio" aria-checked="false">
+                          <span class="currency">₹</span>5,000
+                        </button>
+                      </div>
+                    </div>
+
+                    <!-- Custom Amount Input -->
+                    <div class="custom-amount-block">
+                      <label for="customAmountInput" class="form-label">Or Enter Custom Amount:</label>
+                      <div class="currency-input-wrap">
+                        <span class="currency-symbol" aria-hidden="true">₹</span>
+                        <input 
+                          type="number" 
+                          id="customAmountInput" 
+                          name="customAmount" 
+                          class="form-input currency-input" 
+                          placeholder="Other amount (e.g., 1500)" 
+                          min="100" 
+                          step="50"
+                        />
+                      </div>
+                      <div class="input-hint" id="customAmountHint">Minimum donation ₹100. Every contribution matters.</div>
+                    </div>
+
+                    <!-- Program / Cause Selection -->
+                    <div class="form-group">
+                      <label for="donationCause" class="form-label">Direct My Contribution Towards:</label>
+                      <select id="donationCause" name="donationCause" class="form-select">
+                        <option value="General Fund (Where Needed Most)">Where Needed Most (General Community Fund)</option>
+                        <option value="Education for Every Child">Education for Every Child Initiative</option>
+                        <option value="Community Care & Nutrition">Community Care & Family Nutrition</option>
+                        <option value="Green Tomorrow Environment">Green Tomorrow Sapling Drives</option>
+                      </select>
+                    </div>
+
+                    <!-- Donor Name & Email (For summary) -->
+                    <div class="form-row-2">
+                      <div class="form-group">
+                        <label for="donorName" class="form-label">Your Name (Optional):</label>
+                        <input type="text" id="donorName" name="donorName" class="form-input" placeholder="e.g. Anandita Sen" />
+                      </div>
+                      <div class="form-group">
+                        <label for="donorEmail" class="form-label">Email Address (Optional):</label>
+                        <input type="email" id="donorEmail" name="donorEmail" class="form-input" placeholder="for impact receipt demo" />
+                      </div>
+                    </div>
+
+                    <!-- Selected Tier Summary Preview -->
+                    <div class="donation-summary-pill" id="donationSummaryPill">
+                      <span class="summary-label">Selected:</span>
+                      <strong id="summaryFrequency">One-Time</strong> contribution of 
+                      <strong id="summaryAmountText">₹1,000</strong> to 
+                      <span id="summaryCauseText">Where Needed Most</span>
+                    </div>
+
+                    <!-- Terms & Privacy Checkbox -->
+                    <div class="form-group form-checkbox-group">
+                      <label class="checkbox-label" for="donationTerms">
+                        <input type="checkbox" id="donationTerms" name="donationTerms" class="form-checkbox" required checked />
+                        <span class="checkbox-custom" aria-hidden="true"></span>
+                        <span class="checkbox-text">
+                          I agree to review the <a href="#privacy" class="open-terms-link" data-modal="terms">donation terms</a> and understand this prototype demonstrates UI/UX donation workflows.
+                        </span>
+                      </label>
+                      <div class="field-error" id="donationTermsError" aria-live="polite"></div>
+                    </div>
+
+                    <!-- Submit CTA -->
+                    <button type="submit" class="btn btn-coral btn-lg btn-block" id="makeDifferenceBtn">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                      <span>Make a Difference</span>
+                    </button>
+
+                    <!-- Prototype Notice -->
+                    <p class="donation-secure-note">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                      <span>Prototype Mode: Demonstrates full donation UX. No actual payments or banking gateways connected.</span>
+                    </p>
+
+                  </form>
+                </div>
+
+              </div>
+
+            </div>
+          </section>
+
+          <!-- ========================================================
+               6. CAMPAIGNS AND EVENTS
+               ======================================================== -->
+          <section class="section campaigns-section" id="campaigns">
+            <div class="container">
+              
+              <div class="section-header text-center">
+                <span class="section-tag">ACTIVE INITIATIVES</span>
+                <h2 class="section-title">Be Part of Something Meaningful</h2>
+                <p class="section-subtitle">
+                  Discover the initiatives bringing people together and creating positive change.
+                </p>
+                <div class="prototype-data-notice" role="note">
+                  <span class="info-dot" aria-hidden="true">&#9432;</span>
+                  <span>Illustrative sample campaigns and event schedules for design prototype evaluation.</span>
+                </div>
+              </div>
+
+              <!-- 3 Campaign Cards -->
+              <div class="campaigns-grid">
+                
+                <!-- Card 1: Education for Every Child -->
+                <article class="campaign-card">
+                  <div class="campaign-image-wrap">
+                    <img 
+                      src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=700&q=80" 
+                      alt="Children learning with books in a community classroom" 
+                      class="campaign-img"
+                      loading="lazy"
+                    />
+                    <span class="campaign-pill">Education & Literacy</span>
+                  </div>
+                  <div class="campaign-body">
+                    <h3 class="campaign-title">Education for Every Child</h3>
+                    <p class="campaign-desc">
+                      Help create better learning opportunities and brighter futures through quality textbooks, tutoring circles, and after-school clubs.
+                    </p>
+                    
+                    <!-- Illustrative Progress Bar -->
+                    <div class="campaign-progress" aria-label="Fundraising progress: 70%">
+                      <div class="progress-labels">
+                        <span class="raised-text">₹3,50,000 raised</span>
+                        <span class="goal-text">Goal: ₹5,00,000</span>
+                      </div>
+                      <div class="progress-bar-track">
+                        <div class="progress-bar-fill" style="width: 70%;"></div>
+                      </div>
+                      <span class="sample-data-tag">Sample progress indicator</span>
+                    </div>
+
+                    <div class="campaign-footer">
+                      <button type="button" class="btn btn-coral btn-block campaign-support-btn" data-campaign="Education for Every Child">
+                        <span>Support This Cause</span>
+                      </button>
+                    </div>
+                  </div>
+                </article>
+
+                <!-- Card 2: Community Care -->
+                <article class="campaign-card">
+                  <div class="campaign-image-wrap">
+                    <img 
+                      src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=700&q=80" 
+                      alt="Hands caring for healthy food packages and community assistance" 
+                      class="campaign-img"
+                      loading="lazy"
+                    />
+                    <span class="campaign-pill pill-sage">Health & Wellbeing</span>
+                  </div>
+                  <div class="campaign-body">
+                    <h3 class="campaign-title">Community Care</h3>
+                    <p class="campaign-desc">
+                      Support community wellbeing through meaningful local initiatives, nutrition aid, seasonal warm-clothing drives, and care packages.
+                    </p>
+                    
+                    <!-- Illustrative Progress Bar -->
+                    <div class="campaign-progress" aria-label="Fundraising progress: 65%">
+                      <div class="progress-labels">
+                        <span class="raised-text">₹2,60,000 raised</span>
+                        <span class="goal-text">Goal: ₹4,00,000</span>
+                      </div>
+                      <div class="progress-bar-track">
+                        <div class="progress-bar-fill" style="width: 65%;"></div>
+                      </div>
+                      <span class="sample-data-tag">Sample progress indicator</span>
+                    </div>
+
+                    <div class="campaign-footer">
+                      <button type="button" class="btn btn-outline-forest btn-block campaign-explore-btn" data-campaign="Community Care">
+                        <span>Explore Campaign</span>
+                      </button>
+                    </div>
+                  </div>
+                </article>
+
+                <!-- Card 3: Green Tomorrow -->
+                <article class="campaign-card">
+                  <div class="campaign-image-wrap">
+                    <img 
+                      src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb7?auto=format&fit=crop&w=700&q=80" 
+                      alt="Volunteers planting saplings together in a community park" 
+                      class="campaign-img"
+                      loading="lazy"
+                    />
+                    <span class="campaign-pill pill-forest">Environment</span>
+                  </div>
+                  <div class="campaign-body">
+                    <h3 class="campaign-title">Green Tomorrow</h3>
+                    <p class="campaign-desc">
+                      Encourage environmental awareness and community participation through native tree planting drives and waste segregation education.
+                    </p>
+                    
+                    <!-- Illustrative Progress Bar -->
+                    <div class="campaign-progress" aria-label="Fundraising progress: 60%">
+                      <div class="progress-labels">
+                        <span class="raised-text">₹1,80,000 raised</span>
+                        <span class="goal-text">Goal: ₹3,00,000</span>
+                      </div>
+                      <div class="progress-bar-track">
+                        <div class="progress-bar-fill" style="width: 60%;"></div>
+                      </div>
+                      <span class="sample-data-tag">Sample progress indicator</span>
+                    </div>
+
+                    <div class="campaign-footer">
+                      <button type="button" class="btn btn-coral btn-block campaign-join-btn" data-campaign="Green Tomorrow">
+                        <span>Join the Initiative</span>
+                      </button>
+                    </div>
+                  </div>
+                </article>
+
+              </div>
+
+              <!-- Upcoming Events Section -->
+              <div class="upcoming-events-wrapper" id="events">
+                <div class="events-header">
+                  <div>
+                    <h3 class="events-title">Upcoming Community Events</h3>
+                    <p class="events-subtitle">Meet our team, lend a hand, and experience community spirit firsthand.</p>
+                  </div>
+                  <div class="event-tag-badge">Illustrative Schedule</div>
+                </div>
+
+                <div class="events-grid">
+                  
+                  <!-- Event Card 1 -->
+                  <div class="event-card">
+                    <div class="event-date-badge">
+                      <span class="event-month">NOV</span>
+                      <span class="event-day">14</span>
+                    </div>
+                    <div class="event-info">
+                      <h4 class="event-name">Children's Day Reading Carnival</h4>
+                      <p class="event-meta">
+                        <span class="meta-item">
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                          10:00 AM – 2:00 PM
+                        </span>
+                        <span class="meta-item">
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                          Community Learning Center, Bengaluru
+                        </span>
+                      </p>
+                    </div>
+                    <button type="button" class="btn btn-sm btn-outline-forest rsvp-event-btn" data-event="Children's Day Reading Carnival" data-date="Nov 14, 2026">
+                      Join Event
+                    </button>
+                  </div>
+
+                  <!-- Event Card 2 -->
+                  <div class="event-card">
+                    <div class="event-date-badge">
+                      <span class="event-month">NOV</span>
+                      <span class="event-day">28</span>
+                    </div>
+                    <div class="event-info">
+                      <h4 class="event-name">Community Green Canopy Drive</h4>
+                      <p class="event-meta">
+                        <span class="meta-item">
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                          7:30 AM – 11:30 AM
+                        </span>
+                        <span class="meta-item">
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                          Lalbagh Peripheral Park Zone
+                        </span>
+                      </p>
+                    </div>
+                    <button type="button" class="btn btn-sm btn-outline-forest rsvp-event-btn" data-event="Community Green Canopy Drive" data-date="Nov 28, 2026">
+                      Join Event
+                    </button>
+                  </div>
+
+                  <!-- Event Card 3 -->
+                  <div class="event-card">
+                    <div class="event-date-badge">
+                      <span class="event-month">DEC</span>
+                      <span class="event-day">12</span>
+                    </div>
+                    <div class="event-info">
+                      <h4 class="event-name">Winter Care & Nutrition Distribution</h4>
+                      <p class="event-meta">
+                        <span class="meta-item">
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                          9:00 AM – 1:00 PM
+                        </span>
+                        <span class="meta-item">
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                          North Hub Civic Hall
+                        </span>
+                      </p>
+                    </div>
+                    <button type="button" class="btn btn-sm btn-outline-forest rsvp-event-btn" data-event="Winter Care & Nutrition Distribution" data-date="Dec 12, 2026">
+                      Join Event
+                    </button>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+          <!-- ========================================================
+               7. VOLUNTEER REGISTRATION SECTION
+               ======================================================== -->
+          <section class="section volunteer-section" id="volunteer">
+            <div class="container">
+              
+              <div class="section-header text-center">
+                <span class="section-tag section-tag-coral">JOIN OUR FAMILY</span>
+                <h2 class="section-title">Your Time Can Change a Life</h2>
+                <p class="section-subtitle">
+                  You don't need to do everything. Start by doing something. Join our volunteer community and contribute your skills.
+                </p>
+                <div class="prototype-data-notice" role="note">
+                  <span class="info-dot" aria-hidden="true">&#9432;</span>
+                  <span>Prototype submission demo: Validates user input client-side. No personal data is transmitted externally.</span>
+                </div>
+              </div>
+
+              <div class="volunteer-layout">
+                
+                <!-- Left: Volunteer Value Proposition -->
+                <div class="volunteer-info-column">
+                  <div class="volunteer-pitch-card">
+                    <h3 class="pitch-title">Why Volunteer with InAmigos?</h3>
+                    <p class="pitch-desc">
+                      Volunteering is a chance to give back and grow alongside dedicated changemakers. Here's what you can expect as part of our volunteer network:
+                    </p>
+
+                    <div class="perks-list">
+                      <div class="perk-item">
+                        <div class="perk-icon" aria-hidden="true">
+                          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#174C3C" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </div>
+                        <div>
+                          <strong>Community Connection:</strong>
+                          <span>Meet passionate, kind-hearted peers who share your drive to build a compassionate society.</span>
+                        </div>
+                      </div>
+
+                      <div class="perk-item">
+                        <div class="perk-icon" aria-hidden="true">
+                          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#174C3C" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        </div>
+                        <div>
+                          <strong>Flexible Schedules:</strong>
+                          <span>Contribute as little as 2 hours on weekends or join weekday planning groups according to your availability.</span>
+                        </div>
+                      </div>
+
+                      <div class="perk-item">
+                        <div class="perk-icon" aria-hidden="true">
+                          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#174C3C" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                        </div>
+                        <div>
+                          <strong>Direct Grassroots Impact:</strong>
+                          <span>See the concrete impact of your work immediately in the communities and families you support.</span>
+                        </div>
+                      </div>
+
+                      <div class="perk-item">
+                        <div class="perk-icon" aria-hidden="true">
+                          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#174C3C" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        </div>
+                        <div>
+                          <strong>Volunteer Certificate:</strong>
+                          <span>Receive verified certificates of appreciation and references acknowledging your service hours.</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="volunteer-testimonial-snippet">
+                      <p class="snippet-quote">
+                        "The two hours I spend volunteering every Saturday are the most fulfilling hours of my entire week."
+                      </p>
+                      <span class="snippet-author">— Rahul M., Education Volunteer since 2025</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Right: Accessible Volunteer Registration Form -->
+                <div class="volunteer-form-column">
+                  <div class="volunteer-form-card">
+                    <form id="volunteerForm" class="volunteer-form" novalidate>
+                      
+                      <!-- Row: Name and Email -->
+                      <div class="form-row-2">
+                        <div class="form-group">
+                          <label for="volFullName" class="form-label">Full Name <span class="required">*</span></label>
+                          <input 
+                            type="text" 
+                            id="volFullName" 
+                            name="volFullName" 
+                            class="form-input" 
+                            placeholder="e.g. Kavita Sharma" 
+                            required 
+                          />
+                          <div class="field-error" id="volFullNameError" aria-live="polite"></div>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="volEmail" class="form-label">Email Address <span class="required">*</span></label>
+                          <input 
+                            type="email" 
+                            id="volEmail" 
+                            name="volEmail" 
+                            class="form-input" 
+                            placeholder="e.g. kavita@example.com" 
+                            required 
+                          />
+                          <div class="field-error" id="volEmailError" aria-live="polite"></div>
+                        </div>
+                      </div>
+
+                      <!-- Row: Phone and City -->
+                      <div class="form-row-2">
+                        <div class="form-group">
+                          <label for="volPhone" class="form-label">Phone Number <span class="required">*</span></label>
+                          <input 
+                            type="tel" 
+                            id="volPhone" 
+                            name="volPhone" 
+                            class="form-input" 
+                            placeholder="e.g. +91 98765 43210" 
+                            required 
+                          />
+                          <div class="field-error" id="volPhoneError" aria-live="polite"></div>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="volCity" class="form-label">City / Region <span class="required">*</span></label>
+                          <input 
+                            type="text" 
+                            id="volCity" 
+                            name="volCity" 
+                            class="form-input" 
+                            placeholder="e.g. Bengaluru, Karnataka" 
+                            required 
+                          />
+                          <div class="field-error" id="volCityError" aria-live="polite"></div>
+                        </div>
+                      </div>
+
+                      <!-- Areas of Interest (Pills / Checkboxes) -->
+                      <div class="form-group">
+                        <label class="form-label">Areas of Interest (Select all that apply) <span class="required">*</span></label>
+                        <div class="interest-checkboxes" role="group" aria-label="Volunteer interest areas">
+                          <label class="interest-chip">
+                            <input type="checkbox" name="volInterests" value="Education" checked />
+                            <span class="chip-label">Education & Literacy</span>
+                          </label>
+                          <label class="interest-chip">
+                            <input type="checkbox" name="volInterests" value="Community Support" />
+                            <span class="chip-label">Community Support & Nutrition</span>
+                          </label>
+                          <label class="interest-chip">
+                            <input type="checkbox" name="volInterests" value="Environment" />
+                            <span class="chip-label">Environment & Green Drives</span>
+                          </label>
+                          <label class="interest-chip">
+                            <input type="checkbox" name="volInterests" value="Event Management" />
+                            <span class="chip-label">Event Coordination & Logistics</span>
+                          </label>
+                        </div>
+                        <div class="field-error" id="volInterestsError" aria-live="polite"></div>
+                      </div>
+
+                      <!-- Availability Selection -->
+                      <div class="form-group">
+                        <label class="form-label">Availability <span class="required">*</span></label>
+                        <div class="radio-group-row" role="radiogroup" aria-label="Volunteer Availability">
+                          <label class="radio-label">
+                            <input type="radio" name="volAvailability" value="Weekends" checked />
+                            <span class="radio-custom"></span>
+                            <span>Weekends</span>
+                          </label>
+                          <label class="radio-label">
+                            <input type="radio" name="volAvailability" value="Weekdays" />
+                            <span class="radio-custom"></span>
+                            <span>Weekdays</span>
+                          </label>
+                          <label class="radio-label">
+                            <input type="radio" name="volAvailability" value="Flexible" />
+                            <span class="radio-custom"></span>
+                            <span>Flexible Hours</span>
+                          </label>
+                        </div>
+                      </div>
+
+                      <!-- Motivation Message -->
+                      <div class="form-group">
+                        <label for="volMessage" class="form-label">Why would you like to volunteer with us? <span class="required">*</span></label>
+                        <textarea 
+                          id="volMessage" 
+                          name="volMessage" 
+                          rows="3" 
+                          class="form-textarea" 
+                          placeholder="Tell us a little bit about yourself, your skills, or what inspires you to serve..." 
+                          required
+                        ></textarea>
+                        <div class="field-error" id="volMessageError" aria-live="polite"></div>
+                      </div>
+
+                      <!-- Consent Checkbox -->
+                      <div class="form-group form-checkbox-group">
+                        <label class="checkbox-label" for="volConsent">
+                          <input type="checkbox" id="volConsent" name="volConsent" class="form-checkbox" required checked />
+                          <span class="checkbox-custom" aria-hidden="true"></span>
+                          <span class="checkbox-text">
+                            I consent to InAmigos Foundation contacting me regarding volunteer orientations and community drives.
+                          </span>
+                        </label>
+                        <div class="field-error" id="volConsentError" aria-live="polite"></div>
+                      </div>
+
+                      <!-- Submit Button -->
+                      <button type="submit" class="btn btn-coral btn-lg btn-block" id="volunteerSubmitBtn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        <span>Join Our Mission</span>
+                      </button>
+
+                      <p class="form-privacy-note">
+                        We value your privacy. Your personal information will never be sold, rented, or sent to external marketing third parties.
+                      </p>
+
+                    </form>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </section>
+
+          <!-- ========================================================
+               8. TESTIMONIALS AND STORIES OF CHANGE
+               ======================================================== -->
+          <section class="section testimonials-section" id="testimonials">
+            <div class="container">
+              
+              <div class="section-header text-center">
+                <span class="section-tag">VOICES OF HOPE</span>
+                <h2 class="section-title">Real People. Real Impact.</h2>
+                <p class="section-subtitle">
+                  Hear from the volunteers and community champions who make our shared journey possible.
+                </p>
+                <div class="prototype-data-notice" role="note">
+                  <span class="info-dot" aria-hidden="true">&#9432;</span>
+                  <span>Illustrative placeholder testimonials for design prototype review. Real verified stories will replace these upon publication.</span>
+                </div>
+              </div>
+
+              <!-- 3 Testimonial Cards -->
+              <div class="testimonials-grid">
+                
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card">
+                  <div class="testimonial-stars" aria-label="5 stars rating">
+                    &#9733;&#9733;&#9733;&#9733;&#9733;
+                  </div>
+                  <blockquote class="testimonial-quote">
+                    "Joining InAmigos as an education volunteer showed me how much a small group of determined people can accomplish. Seeing children master reading and smile with pride is the greatest gift."
+                  </blockquote>
+                  <div class="testimonial-author">
+                    <img 
+                      src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80" 
+                      alt="Priya Sharma avatar portrait" 
+                      class="author-avatar"
+                      loading="lazy"
+                    />
+                    <div class="author-details">
+                      <h4 class="author-name">Priya Sharma</h4>
+                      <p class="author-role">Teaching Volunteer (1.5 Years)</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card highlighted-testimonial">
+                  <div class="testimonial-stars" aria-label="5 stars rating">
+                    &#9733;&#9733;&#9733;&#9733;&#9733;
+                  </div>
+                  <blockquote class="testimonial-quote">
+                    "When our neighbourhood faced nutrition shortages, the InAmigos team mobilized within 48 hours. They didn't just bring supplies—they brought genuine warmth, respect, and long-term care."
+                  </blockquote>
+                  <div class="testimonial-author">
+                    <img 
+                      src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80" 
+                      alt="Rajesh Kumar avatar portrait" 
+                      class="author-avatar"
+                      loading="lazy"
+                    />
+                    <div class="author-details">
+                      <h4 class="author-name">Rajesh Kumar</h4>
+                      <p class="author-role">Community Resident & Local Coordinator</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card">
+                  <div class="testimonial-stars" aria-label="5 stars rating">
+                    &#9733;&#9733;&#9733;&#9733;&#9733;
+                  </div>
+                  <blockquote class="testimonial-quote">
+                    "The Green Tomorrow tree drives transformed our urban parks into flourishing biodiversity spots. Everyone from school kids to senior citizens came together with shovels and big smiles."
+                  </blockquote>
+                  <div class="testimonial-author">
+                    <img 
+                      src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80" 
+                      alt="Ananya Deshmukh avatar portrait" 
+                      class="author-avatar"
+                      loading="lazy"
+                    />
+                    <div class="author-details">
+                      <h4 class="author-name">Ananya Deshmukh</h4>
+                      <p class="author-role">Environmental Campaign Volunteer</p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Link for Future Expansion -->
+              <div class="stories-expansion-link text-center">
+                <button type="button" class="btn btn-link stories-modal-btn" id="openStoriesBtn">
+                  <span>Explore More Stories of Change &rarr;</span>
+                </button>
+              </div>
+
+            </div>
+          </section>
+
+          <!-- ========================================================
+               9. CONTACT AND SUPPORT SECTION (With FAQ Accordion)
+               ======================================================== -->
+          <section class="section contact-section" id="contact">
+            <div class="container">
+              
+              <div class="section-header text-center">
+                <span class="section-tag">GET IN TOUCH</span>
+                <h2 class="section-title">We'd Love to Hear From You</h2>
+                <p class="section-subtitle">
+                  Have a question, an idea, or a desire to contribute? Let's connect.
+                </p>
+              </div>
+
+              <div class="contact-layout">
+                
+                <!-- Left: Contact Details & FAQ Accordion -->
+                <div class="contact-info-col">
+                  
+                  <!-- Contact Info Cards -->
+                  <div class="contact-details-box">
+                    <h3 class="contact-block-title">Direct Inquiries</h3>
+                    <p class="contact-block-sub">Reach our community desk Monday through Saturday, 9:00 AM to 6:00 PM IST.</p>
+
+                    <div class="contact-channels">
+                      <div class="channel-item">
+                        <div class="channel-icon" aria-hidden="true">
+                          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#174C3C" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                        </div>
+                        <div class="channel-details">
+                          <span class="channel-label">Email Support</span>
+                          <a href="mailto:contact@inamigosfoundation.org" class="channel-val">contact@inamigosfoundation.org</a>
+                          <span class="placeholder-label">(Illustrative Contact Placeholder)</span>
+                        </div>
+                      </div>
+
+                      <div class="channel-item">
+                        <div class="channel-icon" aria-hidden="true">
+                          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#174C3C" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        </div>
+                        <div class="channel-details">
+                          <span class="channel-label">Phone Helpline</span>
+                          <a href="tel:+919876543210" class="channel-val">+91 98765 43210</a>
+                          <span class="placeholder-label">(Illustrative Contact Placeholder)</span>
+                        </div>
+                      </div>
+
+                      <div class="channel-item">
+                        <div class="channel-icon" aria-hidden="true">
+                          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#174C3C" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                        </div>
+                        <div class="channel-details">
+                          <span class="channel-label">Office Address</span>
+                          <span class="channel-val">42 Harmony Grove, Green Valley, Bengaluru, Karnataka 560001</span>
+                          <span class="placeholder-label">(Illustrative Location Placeholder)</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Social Media Links -->
+                    <div class="contact-socials">
+                      <span class="socials-label">Follow Our Journey:</span>
+                      <div class="social-links-row">
+                        <a href="#hero" class="social-btn" aria-label="Follow InAmigos on Instagram">
+                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                        </a>
+                        <a href="#hero" class="social-btn" aria-label="Connect with InAmigos on LinkedIn">
+                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                        </a>
+                        <a href="#hero" class="social-btn" aria-label="Follow InAmigos on Twitter X">
+                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4l11.733 16h4.267l-11.733 -16z"/><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"/></svg>
+                        </a>
+                        <a href="#hero" class="social-btn" aria-label="Join InAmigos on Facebook">
+                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                        </a>
+                        <a href="#hero" class="social-btn" aria-label="Watch InAmigos videos on YouTube">
+                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><polygon points="10 15 15 12 10 9 10 15"/></svg>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- FAQ Accordion -->
+                  <div class="faq-accordion-block">
+                    <h3 class="contact-block-title">Frequently Asked Questions</h3>
+                    <div class="faq-list" role="region" aria-label="FAQ Accordion">
+                      
+                      <!-- FAQ Item 1 -->
+                      <div class="faq-item">
+                        <button type="button" class="faq-trigger" aria-expanded="true" aria-controls="faq1Content">
+                          <span>How are my financial donations utilized?</span>
+                          <span class="faq-icon" aria-hidden="true">&plus;</span>
+                        </button>
+                        <div class="faq-content" id="faq1Content">
+                          <p>
+                            Donations directly fund our grassroots campaigns—purchasing school materials, providing community nutritional support, and planting native saplings. We believe in complete transparency and publish periodic impact updates for all supporters.
+                          </p>
+                        </div>
+                      </div>
+
+                      <!-- FAQ Item 2 -->
+                      <div class="faq-item">
+                        <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq2Content">
+                          <span>Do I need prior experience or qualification to volunteer?</span>
+                          <span class="faq-icon" aria-hidden="true">&plus;</span>
+                        </button>
+                        <div class="faq-content" id="faq2Content" hidden>
+                          <p>
+                            Not at all! The only prerequisite is an open heart and a willingness to help. We conduct friendly orientation workshops for all new volunteers and pair you with experienced community coordinators.
+                          </p>
+                        </div>
+                      </div>
+
+                      <!-- FAQ Item 3 -->
+                      <div class="faq-item">
+                        <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq3Content">
+                          <span>Can I start an InAmigos campaign or chapter in my own city?</span>
+                          <span class="faq-icon" aria-hidden="true">&plus;</span>
+                        </button>
+                        <div class="faq-content" id="faq3Content" hidden>
+                          <p>
+                            Yes! If you see a pressing local need in your neighborhood or town, reach out through our contact form. Our outreach leads will guide you through organizing a local chapter and planning your first community drive.
+                          </p>
+                        </div>
+                      </div>
+
+                      <!-- FAQ Item 4 -->
+                      <div class="faq-item">
+                        <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq4Content">
+                          <span>How do I reach the foundation team for corporate partnerships?</span>
+                          <span class="faq-icon" aria-hidden="true">&plus;</span>
+                        </button>
+                        <div class="faq-content" id="faq4Content" hidden>
+                          <p>
+                            Organizations interested in employee volunteering drives, CSR collaborations, or supply sponsorships can send an email with the subject "Corporate Partnership" to our contact desk.
+                          </p>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+
+                </div>
+
+                <!-- Right: Contact Message Form -->
+                <div class="contact-form-col">
+                  <div class="contact-form-card">
+                    <h3 class="form-card-title">Send Us a Direct Message</h3>
+                    <p class="form-card-sub">Fill out the form below and a representative will get back to you shortly.</p>
+
+                    <form id="contactForm" class="contact-form" novalidate>
+                      
+                      <div class="form-group">
+                        <label for="contactName" class="form-label">Your Name <span class="required">*</span></label>
+                        <input 
+                          type="text" 
+                          id="contactName" 
+                          name="contactName" 
+                          class="form-input" 
+                          placeholder="e.g. Ramesh Chandra" 
+                          required 
+                        />
+                        <div class="field-error" id="contactNameError" aria-live="polite"></div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="contactEmail" class="form-label">Email Address <span class="required">*</span></label>
+                        <input 
+                          type="email" 
+                          id="contactEmail" 
+                          name="contactEmail" 
+                          class="form-input" 
+                          placeholder="e.g. ramesh@example.com" 
+                          required 
+                        />
+                        <div class="field-error" id="contactEmailError" aria-live="polite"></div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="contactSubject" class="form-label">Subject <span class="required">*</span></label>
+                        <select id="contactSubject" name="contactSubject" class="form-select" required>
+                          <option value="">Please select a subject...</option>
+                          <option value="General Inquiry">General Question / Inquiry</option>
+                          <option value="Volunteer Opportunity">Volunteering Opportunities</option>
+                          <option value="Donation Inquiry">Donations & Support</option>
+                          <option value="Campaign Collaboration">Propose a New Campaign</option>
+                          <option value="Media or Partnership">Media / Institutional Partnership</option>
+                        </select>
+                        <div class="field-error" id="contactSubjectError" aria-live="polite"></div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="contactMessage" class="form-label">Message <span class="required">*</span></label>
+                        <textarea 
+                          id="contactMessage" 
+                          name="contactMessage" 
+                          rows="4" 
+                          class="form-textarea" 
+                          placeholder="Write your message, questions, or collaborative idea here..." 
+                          required
+                        ></textarea>
+                        <div class="field-error" id="contactMessageError" aria-live="polite"></div>
+                      </div>
+
+                      <button type="submit" class="btn btn-coral btn-lg btn-block" id="contactSubmitBtn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" x2="11" y1="2" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                        <span>Send Message</span>
+                      </button>
+
+                      <div class="form-status-alert" id="contactStatusAlert" role="alert" style="display: none;"></div>
+
+                    </form>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </section>
+
+        </main>
+
+        <!-- ========================================================
+             10. FOOTER
+             ======================================================== -->
+        <footer class="site-footer">
+          <div class="container footer-container">
+            
+            <div class="footer-grid">
+              
+              <!-- Column 1: Brand & Mission -->
+              <div class="footer-col brand-col">
+                <div class="brand-logo footer-logo">
+                  <div class="logo-mark" aria-hidden="true">
+                    <svg width="34" height="34" viewBox="0 0 36 36" fill="none">
+                      <circle cx="18" cy="18" r="18" fill="#F7F4EC" />
+                      <path d="M18 26.5C18 26.5 10 20.8 10 15.2C10 12.3 12.2 10 15 10C16.8 10 18 11.2 18 11.2C18 11.2 19.2 10 21 10C23.8 10 26 12.3 26 15.2C26 20.8 18 26.5 18 26.5Z" fill="#F28B62" />
+                    </svg>
+                  </div>
+                  <div class="brand-text">
+                    <span class="brand-name light">InAmigos</span>
+                    <span class="brand-sub light">Foundation</span>
+                  </div>
+                </div>
+
+                <p class="footer-mission-text">
+                  InAmigos Foundation is dedicated to community development, education for every child, and environmental care. We unite hearts and hands to build sustainable, compassionate communities.
+                </p>
+
+                <div class="footer-tagline-quote">
+                  "Together, we can make tomorrow brighter."
+                </div>
+              </div>
+
+              <!-- Column 2: Quick Links -->
+              <div class="footer-col">
+                <h4 class="footer-heading">Quick Links</h4>
+                <ul class="footer-links">
+                  <li><a href="#hero">Home</a></li>
+                  <li><a href="#about">About Our Mission</a></li>
+                  <li><a href="#impact">Our Impact</a></li>
+                  <li><a href="#campaigns">Current Campaigns</a></li>
+                  <li><a href="#volunteer">Become a Volunteer</a></li>
+                  <li><a href="#contact">Contact Support</a></li>
+                </ul>
+              </div>
+
+              <!-- Column 3: Campaigns -->
+              <div class="footer-col">
+                <h4 class="footer-heading">Initiatives</h4>
+                <ul class="footer-links">
+                  <li><a href="#campaigns">Education for Every Child</a></li>
+                  <li><a href="#campaigns">Community Care Drives</a></li>
+                  <li><a href="#campaigns">Green Tomorrow Tree Planting</a></li>
+                  <li><a href="#events">Upcoming Community Events</a></li>
+                  <li><a href="#testimonials">Stories of Change</a></li>
+                </ul>
+              </div>
+
+              <!-- Column 4: Contact & Support (Placeholders) -->
+              <div class="footer-col">
+                <h4 class="footer-heading">Get in Touch</h4>
+                <ul class="footer-contact-list">
+                  <li>
+                    <span class="footer-contact-label">Email:</span>
+                    <a href="mailto:contact@inamigosfoundation.org">contact@inamigosfoundation.org</a>
+                  </li>
+                  <li>
+                    <span class="footer-contact-label">Phone:</span>
+                    <a href="tel:+919876543210">+91 98765 43210</a>
+                  </li>
+                  <li>
+                    <span class="footer-contact-label">Office:</span>
+                    <span>42 Harmony Grove, Green Valley, Bengaluru, KA 560001</span>
+                  </li>
+                  <li class="footer-note-item">
+                    <span>* Sample contact placeholders for prototype evaluation.</span>
+                  </li>
+                </ul>
+
+                <div class="footer-social-row">
+                  <a href="#hero" class="footer-social-icon" aria-label="InAmigos on Instagram">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/></svg>
+                  </a>
+                  <a href="#hero" class="footer-social-icon" aria-label="InAmigos on LinkedIn">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/></svg>
+                  </a>
+                  <a href="#hero" class="footer-social-icon" aria-label="InAmigos on Twitter">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4l11.733 16h4.267l-11.733 -16z"/><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"/></svg>
+                  </a>
+                  <a href="#hero" class="footer-social-icon" aria-label="InAmigos on Facebook">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                  </a>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Footer Bottom Bar -->
+            <div class="footer-bottom">
+              <div class="copyright-text">
+                &copy; <span id="currentYear">2026</span> InAmigos Foundation. All rights reserved. Designed for positive social impact.
+              </div>
+              <div class="legal-links">
+                <button type="button" class="legal-link-btn" data-modal="privacy">Privacy Policy</button>
+                <span class="sep" aria-hidden="true">&bull;</span>
+                <button type="button" class="legal-link-btn" data-modal="terms">Terms of Service</button>
+                <span class="sep" aria-hidden="true">&bull;</span>
+                <a href="#hero" class="legal-link-btn">Back to Top &uarr;</a>
+              </div>
+            </div>
+
+          </div>
+        </footer>
+
+      </div> <!-- /deviceScreen -->
+    </div> <!-- /deviceFrame -->
+  </div> <!-- /viewportContainer -->
+
+  <!-- ========================================================
+       MODALS & INTERACTIVE OVERLAYS
+       ======================================================== -->
+
+  <!-- 1. Donation Confirmation Modal (Prototype Demo) -->
+  <div class="modal-dialog-overlay" id="donationModal" role="dialog" aria-modal="true" aria-labelledby="donationModalTitle" hidden>
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-icon-badge bg-coral-light">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="#F28B62"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+        </div>
+        <h3 class="modal-title" id="donationModalTitle">Donation Summary & Confirmation</h3>
+        <button type="button" class="modal-close-btn" data-close-modal aria-label="Close dialog">&times;</button>
+      </div>
+      
+      <div class="modal-body">
+        <div class="proto-warning-banner">
+          <strong>PROTOTYPE CONFIRMATION MODE</strong>
+          <span>No live payment gateway is connected. This summary confirms successful validation of your donation preferences.</span>
+        </div>
+
+        <div class="receipt-summary-box">
+          <div class="receipt-row">
+            <span class="receipt-label">Donation Type:</span>
+            <span class="receipt-value" id="modalDonationFreq">One-Time Gift</span>
+          </div>
+          <div class="receipt-row highlight-row">
+            <span class="receipt-label">Amount:</span>
+            <span class="receipt-value font-bold" id="modalDonationAmount">₹1,000</span>
+          </div>
+          <div class="receipt-row">
+            <span class="receipt-label">Designated Initiative:</span>
+            <span class="receipt-value" id="modalDonationCause">Where Needed Most</span>
+          </div>
+          <div class="receipt-row">
+            <span class="receipt-label">Donor Name:</span>
+            <span class="receipt-value" id="modalDonorName">Kind Supporter</span>
+          </div>
+          <div class="receipt-row">
+            <span class="receipt-label">Email Receipt:</span>
+            <span class="receipt-value" id="modalDonorEmail">Provided for Prototype</span>
+          </div>
+        </div>
+
+        <p class="modal-thank-you">
+          "Your support matters. Your generosity creates possibilities." Thank you for testing the InAmigos donation flow.
+        </p>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-coral btn-block" data-close-modal>
+          <span>Acknowledge & Close</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Volunteer Success Modal -->
+  <div class="modal-dialog-overlay" id="volunteerModal" role="dialog" aria-modal="true" aria-labelledby="volunteerModalTitle" hidden>
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-icon-badge bg-sage-light">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#174C3C" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <h3 class="modal-title" id="volunteerModalTitle">Welcome to InAmigos! 🎉</h3>
+        <button type="button" class="modal-close-btn" data-close-modal aria-label="Close dialog">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="proto-warning-banner">
+          <strong>PROTOTYPE SUBMISSION SUCCESSFUL</strong>
+          <span>Your volunteer details were validated. No personal data was saved or sent to external databases.</span>
+        </div>
+        <p class="modal-lead" id="volunteerGreeting">
+          Thank you for stepping forward to serve your community!
+        </p>
+        <p class="modal-text">
+          In a production deployment, our regional volunteer coordinator would reach out within 48 hours to schedule a short 15-minute welcoming call and orientation.
+        </p>
+        <div class="next-steps-card">
+          <h4>What happens next?</h4>
+          <ul>
+            <li>Orientation session details via email</li>
+            <li>Introduction to the local volunteer WhatsApp group</li>
+            <li>Invitation to upcoming weekend drives</li>
+          </ul>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-forest btn-block" data-close-modal>
+          <span>Return to Homepage</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Event RSVP Modal -->
+  <div class="modal-dialog-overlay" id="eventModal" role="dialog" aria-modal="true" aria-labelledby="eventModalTitle" hidden>
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-icon-badge bg-sage-light">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#174C3C" stroke-width="2"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+        </div>
+        <h3 class="modal-title" id="eventModalTitle">RSVP for Community Event</h3>
+        <button type="button" class="modal-close-btn" data-close-modal aria-label="Close dialog">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="event-modal-badge" id="eventModalDetails">Event: Children's Day Reading Carnival</div>
+        <p class="modal-text">
+          Confirm your attendance to receive venue updates, schedule reminders, and volunteer briefing points.
+        </p>
+        <div class="form-group">
+          <label for="rsvpNameInput" class="form-label">Your Name</label>
+          <input type="text" id="rsvpNameInput" class="form-input" placeholder="e.g. Sumanth Rao" />
+        </div>
+        <div class="form-group">
+          <label for="rsvpEmailInput" class="form-label">Email for Calendar Invite</label>
+          <input type="email" id="rsvpEmailInput" class="form-input" placeholder="e.g. sumanth@example.com" />
+        </div>
+        <div class="proto-warning-banner">
+          <span>Prototype RSVP Demonstration: Free community admission.</span>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-coral btn-block" id="confirmRsvpBtn">
+          <span>Confirm Attendance</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Campaign Exploration Modal -->
+  <div class="modal-dialog-overlay" id="campaignModal" role="dialog" aria-modal="true" aria-labelledby="campaignModalTitle" hidden>
+    <div class="modal-card modal-lg">
+      <div class="modal-header">
+        <h3 class="modal-title" id="campaignModalTitle">Campaign Overview</h3>
+        <button type="button" class="modal-close-btn" data-close-modal aria-label="Close dialog">&times;</button>
+      </div>
+      <div class="modal-body" id="campaignModalBody">
+        <!-- Dynamically populated via JS -->
+      </div>
+      <div class="modal-footer">
+        <a href="#donation" class="btn btn-coral" id="modalSupportCampaignBtn">
+          <span>Support This Cause</span>
+        </a>
+        <button type="button" class="btn btn-outline-forest" data-close-modal>
+          <span>Close</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. Stories of Change Modal -->
+  <div class="modal-dialog-overlay" id="storiesModal" role="dialog" aria-modal="true" aria-labelledby="storiesModalTitle" hidden>
+    <div class="modal-card modal-lg">
+      <div class="modal-header">
+        <h3 class="modal-title" id="storiesModalTitle">Stories of Change — Grassroots Chronicles</h3>
+        <button type="button" class="modal-close-btn" data-close-modal aria-label="Close dialog">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="story-chronicle-item">
+          <h4>The Reading Circle at Doddaballapur</h4>
+          <p>
+            In February 2025, InAmigos volunteers arrived at a semi-rural government school with 120 storybooks and art supplies. What began as a 1-hour weekend workshop evolved into a thriving weekly literacy circle. Today, over 80 young students have improved their reading comprehension, and five older students have trained to lead peer reading sessions.
+          </p>
+        </div>
+        <div class="story-chronicle-item">
+          <h4>From Concrete Patch to Green Haven</h4>
+          <p>
+            An abandoned civic plot in the East Ward was repurposed into a native butterfly and shade sanctuary. Over 45 neighborhood families contributed weekend sweat equity to plant 200 saplings, construct natural composting pits, and nurture green biodiversity.
+          </p>
+        </div>
+        <div class="proto-warning-banner">
+          <span>Illustrative stories representing typical nonprofit project outcomes.</span>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-forest btn-block" data-close-modal>
+          <span>Close Stories</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. Legal / Privacy Policy & Terms Modal -->
+  <div class="modal-dialog-overlay" id="legalModal" role="dialog" aria-modal="true" aria-labelledby="legalModalTitle" hidden>
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 class="modal-title" id="legalModalTitle">Terms & Transparency Policy</h3>
+        <button type="button" class="modal-close-btn" data-close-modal aria-label="Close dialog">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Nonprofit Stewardship & Trust:</strong></p>
+        <p>
+          InAmigos Foundation operates as a community-driven nonprofit organization. This web application is a design prototype highlighting essential NGO functionality including donations, volunteering registration, impact reporting, and community inquiries.
+        </p>
+        <p><strong>Privacy Commitment:</strong></p>
+        <p>
+          We respect user privacy. No personally identifiable financial or identity information submitted in this prototype is transmitted to third parties or processed for real transactions.
+        </p>
+        <p><strong>Sample Disclaimers:</strong></p>
+        <p>
+          All statistical indicators, campaigns, and events are illustrative placeholders for design evaluation until official organization verification is updated.
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-forest btn-block" data-close-modal>
+          <span>I Understand</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. Design System & UI Kit Inspector Modal -->
+  <div class="modal-dialog-overlay" id="uiKitModal" role="dialog" aria-modal="true" aria-labelledby="uiKitModalTitle" hidden>
+    <div class="modal-card modal-lg">
+      <div class="modal-header">
+        <div class="modal-icon-badge bg-coral-light">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F28B62" stroke-width="2"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+        </div>
+        <h3 class="modal-title" id="uiKitModalTitle">InAmigos Foundation — Design System & UI Kit</h3>
+        <button type="button" class="modal-close-btn" data-close-modal aria-label="Close dialog">&times;</button>
+      </div>
+      
+      <div class="modal-body uikit-body">
+        
+        <!-- Palette Tokens -->
+        <div class="uikit-section">
+          <h4 class="uikit-subtitle">1. Color Palette Tokens</h4>
+          <div class="color-swatches-grid">
+            <div class="swatch-item">
+              <div class="swatch-color" style="background-color: #174C3C;"></div>
+              <div class="swatch-info">
+                <strong>Forest Green</strong>
+                <code>#174C3C</code>
+                <span class="swatch-role">Primary Brand Color</span>
+              </div>
+            </div>
+
+            <div class="swatch-item">
+              <div class="swatch-color" style="background-color: #F7F4EC; border: 1px solid #e2ddd0;"></div>
+              <div class="swatch-info">
+                <strong>Warm Cream</strong>
+                <code>#F7F4EC</code>
+                <span class="swatch-role">Main Background</span>
+              </div>
+            </div>
+
+            <div class="swatch-item">
+              <div class="swatch-color" style="background-color: #F28B62;"></div>
+              <div class="swatch-info">
+                <strong>Coral Orange</strong>
+                <code>#F28B62</code>
+                <span class="swatch-role">Accent &amp; Important CTAs</span>
+              </div>
+            </div>
+
+            <div class="swatch-item">
+              <div class="swatch-color" style="background-color: #242824;"></div>
+              <div class="swatch-info">
+                <strong>Dark Charcoal</strong>
+                <code>#242824</code>
+                <span class="swatch-role">Headings &amp; Body Text</span>
+              </div>
+            </div>
+
+            <div class="swatch-item">
+              <div class="swatch-color" style="background-color: #DCE9DF;"></div>
+              <div class="swatch-info">
+                <strong>Muted Sage</strong>
+                <code>#DCE9DF</code>
+                <span class="swatch-role">Secondary Backgrounds</span>
+              </div>
+            </div>
+
+            <div class="swatch-item">
+              <div class="swatch-color" style="background-color: #FFFFFF; border: 1px solid #e0e0e0;"></div>
+              <div class="swatch-info">
+                <strong>Pure White</strong>
+                <code>#FFFFFF</code>
+                <span class="swatch-role">Cards &amp; Sections</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Typography -->
+        <div class="uikit-section">
+          <h4 class="uikit-subtitle">2. Typography System</h4>
+          <div class="typography-preview-box">
+            <div class="type-spec">
+              <span class="type-name">Heading Font: <strong>DM Sans</strong> (600, 700, 800)</span>
+              <h2 style="font-family: 'DM Sans', sans-serif; font-size: 1.8rem; margin: 0.3rem 0; color: #174C3C;">
+                Small Acts. Big Change. A Better Tomorrow.
+              </h2>
+            </div>
+            <div class="type-spec" style="margin-top: 1rem;">
+              <span class="type-name">Body Font: <strong>Manrope</strong> (400, 500, 600)</span>
+              <p style="font-family: 'Manrope', sans-serif; font-size: 1rem; color: #242824; line-height: 1.6; margin: 0.3rem 0;">
+                Every helping hand creates a new possibility. Clean editorial layout with generous whitespace, rounded corners, and empathetic human storytelling.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Button Variants -->
+        <div class="uikit-section">
+          <h4 class="uikit-subtitle">3. Reusable Button Components</h4>
+          <div class="button-preview-row">
+            <button class="btn btn-coral">Primary Coral (.btn-coral)</button>
+            <button class="btn btn-forest">Primary Forest (.btn-forest)</button>
+            <button class="btn btn-outline-forest">Outline Forest (.btn-outline-forest)</button>
+            <button class="btn btn-sm btn-coral">Small Button (.btn-sm)</button>
+          </div>
+        </div>
+
+        <!-- Reusable Component Specification -->
+        <div class="uikit-section">
+          <h4 class="uikit-subtitle">4. Layout &amp; Grid Specifications</h4>
+          <ul class="uikit-specs-list">
+            <li><strong>Desktop Canvas:</strong> 1440px target viewport width with 1180px centered content container.</li>
+            <li><strong>Mobile Viewport:</strong> 390px target viewport width with single column stacked flow and full-width buttons.</li>
+            <li><strong>Border Radii:</strong> Micro: 6px | Buttons/Cards: 12px–16px | Large Containers: 24px | Full Pill: 9999px.</li>
+            <li><strong>Shadow System:</strong> Subtle ambient diffuse shadows (<code>0 8px 30px rgba(23,76,60,0.06)</code>) preventing harsh outlines.</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-forest btn-block" data-close-modal>
+          <span>Done Inspecting</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
